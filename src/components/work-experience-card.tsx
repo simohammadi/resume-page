@@ -44,13 +44,13 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
                       }
                     />
                   }
-                  aria-label="klarna"
+                  aria-label={experienceData.company.name}
                   variant={'ghost'}
                   onClick={onLogoClick}></IconButton>
               </Flex>
             </CardHeader>
             <Flex paddingLeft={'20px'} paddingRight={'20px'}>
-              <Divider color={''} />
+              <Divider />
             </Flex>
             <CardBody>
               <Stack spacing="4">
@@ -75,26 +75,26 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
                   <Heading size="xs" textTransform="uppercase">
                     Frameworks
                   </Heading>
-                  <Stack direction="row" pt="2" spacing={2}>
+                  <Flex flexWrap="wrap" gap={2} pt="2">
                     {experienceData.badges.frameworks.map((badge) => (
                       <Badge variant="subtle" colorScheme="black" key={badge}>
                         {badge}
                       </Badge>
                     ))}
-                  </Stack>
+                  </Flex>
                 </Box>
                 <Divider />
                 <Box>
                   <Heading size="xs" textTransform="uppercase">
                     Tech
                   </Heading>
-                  <Stack direction="row" pt="2" spacing={2}>
+                  <Flex flexWrap="wrap" gap={2} pt="2">
                     {experienceData.badges.technologies.map((badge) => (
                       <Badge variant="subtle" colorScheme="black" key={badge}>
                         {badge}
                       </Badge>
                     ))}
-                  </Stack>
+                  </Flex>
                 </Box>
               </Stack>
             </CardBody>
