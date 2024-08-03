@@ -34,7 +34,16 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
               <Flex justifyContent="space-between" alignItems="center">
                 <Heading size={'md'}>{experienceData.company.projectName}</Heading>
                 <IconButton
-                  icon={<Image borderRadius="full" src={experienceData.company.logoSrc} h="60px" />}
+                  icon={
+                    <Image
+                      src={experienceData.company.logo.src}
+                      h={`${experienceData.company.logo.dim}px`}
+                      paddingRight={
+                        experienceData.company.logo.padding ??
+                        `${experienceData.company.logo.padding}px`
+                      }
+                    />
+                  }
                   aria-label="klarna"
                   variant={'ghost'}
                   onClick={onLogoClick}></IconButton>
