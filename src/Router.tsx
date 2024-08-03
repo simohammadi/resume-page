@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import AboutPage from './pages/about-me';
 import HomePage from './pages/home';
 import Layout from './components/layout';
@@ -11,7 +11,7 @@ export enum Paths {
   projects = 'projects'
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: Paths.root,
     element: <Layout />,

@@ -2,6 +2,7 @@
   "name": "cv-page-chakra-ui",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@chakra-ui/react": "latest",
     "@emotion/react": "^11.13.0",
@@ -14,6 +15,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "framer-motion": "^6.2.9",
+    "gh-pages": "^6.1.1",
     "hamburger-react": "^2.5.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -27,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "yarn gh-pages -b gh-pages-8 -d build -f"
   },
   "eslintConfig": {
     "extends": "react-app"

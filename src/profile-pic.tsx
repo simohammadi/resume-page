@@ -4,7 +4,7 @@ export const ProfilePic = () => {
   return (
     <ChakraImg
       borderRadius="full"
-      src={'/images/profile-pic.jpeg'}
+      src={'./images/profile-pic.jpeg'}
       h="30vmin"
       w="30vmin"
       style={{ margin: '0 auto' }}

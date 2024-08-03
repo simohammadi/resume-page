@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sina mohammadi",
+  "name": "Sina mohammadis resume page ",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,11 +9,13 @@
     },
     {
       "src": "images/profile-pic.jpeg",
-      "sizes": "800x800"
+      "sizes": "800x800",
+      "type": "image/x-icon"
     },
-    {}
+    { "src": "images/klarna-logo.png", "type": "image/x-icon" },
+    { "src": "images/novo-nordisk-logo.png", "sizes": "2400x2400", "type": "image/x-icon" }
   ],
-  "start_url": ".",
+  "start_url": "./resume-page/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

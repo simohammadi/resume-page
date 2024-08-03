@@ -18,7 +18,7 @@ export const workExperience: Array<ExperienceData> = [
     company: {
       name: 'Klarna',
       projectName: 'Login Platform',
-      logoSrc: '/images/icons/klarna-logo.png',
+      logoSrc: './images/icons/klarna-logo.png',
       domain: new URL('https://klarna.se')
     },
     teamDescription: `The login platform team built the foundation for moving all customer facing authentication to one system. 
@@ -39,7 +39,7 @@ export const workExperience: Array<ExperienceData> = [
     company: {
       name: 'Klarna',
       projectName: 'Sign in with Klarna',
-      logoSrc: '/images/icons/klarna-logo.png',
+      logoSrc: './images/icons/klarna-logo.png',
       domain: new URL('https://klarna.se')
     },
     teamDescription: `The Sign in with Klarna team aimed to expose the login platforms OIDC service to merchants by offering easy ways of integrating. This enabled Klarna customers to smoothly onboard at merchants and allowed make purchases without unnecessary friction.`,
@@ -54,7 +54,7 @@ export const workExperience: Array<ExperienceData> = [
     company: {
       name: 'Novo nordisk',
       projectName: 'Research colaboration platform',
-      logoSrc: '/images/icons/novo-nordisk-logo.png',
+      logoSrc: './images/icons/novo-nordisk-logo.png',
       domain: new URL('https://www.novonordisk.com')
     },
     teamDescription: `Sina was brought in as a consultant to the team due to his experience within the authentication space. The project aimed to build a platform where Novo Nordisk data could be exposed both to researchers at novo but also to external institutions and actors.`,
