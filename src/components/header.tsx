@@ -3,21 +3,11 @@ import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import Hamburger from 'hamburger-react';
 import DrawerComponent from './drawer';
 import BreadcrumbComponent from './breadcrumb';
-import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const onMenuClick = () => {
-    isOpen ? onClose() : onOpen();
-  };
-
-  // Can probably refactor this into breadcrumb to get rid of the error
-  const location = useLocation();
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  useEffect(() => {}, [location.pathname]);
+  const { isOpen, onToggle, onClose } = useDisclosure();
+  const hamburgerRef = useRef(null);
 
   return (
     <>
@@ -48,12 +38,13 @@ const Header = () => {
           zIndex={1}
           minWidth={'full'}>
           <IconButton
-            icon={<Hamburger size={26} />}
+            icon={<Hamburger toggled={isOpen} size={26} />}
             aria-label="menu"
             variant={'gradient'}
             size={'md'}
             color={'black'}
-            onClick={onMenuClick}
+            onClick={onToggle}
+            ref={hamburgerRef}
           />
           <Stack direction="row" spacing={2} justifyContent={'flex-end'} justifySelf={'flex-end'}>
             <BreadcrumbComponent></BreadcrumbComponent>
@@ -61,7 +52,7 @@ const Header = () => {
           </Stack>
         </Flex>
       </Flex>
-      <DrawerComponent isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
+      <DrawerComponent isOpen={isOpen} onDrawerClose={onClose} buttonRef={hamburgerRef} />
     </>
   );
 };
