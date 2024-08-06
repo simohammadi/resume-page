@@ -1,9 +1,10 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { Paths } from '../Router';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const BreadcrumbComponent = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const pathMap = {
     [`/${Paths.aboutMe}`]: 'About me',
@@ -23,11 +24,20 @@ const BreadcrumbComponent = () => {
     );
   }
 
-  if (pathname && (pathname === `/${Paths.aboutMe}` || pathname === `/${Paths.workExperience}`)) {
+  if (
+    pathname &&
+    (pathname === `/${Paths.aboutMe}` ||
+      pathname === `/${Paths.workExperience}`)
+  ) {
     return (
       <Breadcrumb alignItems={'center'} alignSelf={'center'}>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink
+            onClick={() => {
+              navigate('/');
+            }}>
+            Home
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
