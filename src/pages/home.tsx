@@ -1,7 +1,17 @@
-import { Box, Button, Card, CardBody, Flex, Heading, HStack, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  Flex,
+  Heading,
+  HStack,
+  VStack
+} from '@chakra-ui/react';
 import { css, keyframes } from '@emotion/react';
 import { ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { links } from '../data/links';
 
 const GradientText = ({ children }: { children: string }) => {
   const pulse = keyframes`
@@ -23,10 +33,17 @@ const GradientText = ({ children }: { children: string }) => {
       sx={{}}
       fontSize={64}
       css={css`
-        background: linear-gradient(45deg, #161509 0%, #161509 50%, black 80%, black 100%);
+        background: linear-gradient(
+          45deg,
+          #161509 0%,
+          #161509 50%,
+          black 80%,
+          black 100%
+        );
         -webkit-background-clip: text;
         color: transparent;
-        text-shadow: 120 0 10px rgba(0, 255, 128, 0.7), 0 0 10px rgba(0, 0, 0, 0.8);
+        text-shadow: 120 0 10px rgba(0, 255, 128, 0.7),
+          0 0 10px rgba(0, 0, 0, 0.8);
         animation-iteration-count: 'infinite';
         animation: ${pulse} 4s infinite;
         opacity: 1;
@@ -55,7 +72,7 @@ const HomePage = () => {
   };
 
   const onGetInTouchClick = () => {
-    window.open('https://www.linkedin.com/in/sina-mohammadi-9627b1137');
+    window.open(links.linkedin);
   };
 
   return (
@@ -77,13 +94,7 @@ const HomePage = () => {
                   <Button color={'black'} onClick={onGetInTouchClick}>
                     Get in touch
                   </Button>
-                  <Button
-                    color={'black'}
-                    variant={'outline'}
-                    _hover={{
-                      background: 'brand.600'
-                    }}
-                    onClick={onAboutMeClick}>
+                  <Button variant={'outline'} onClick={onAboutMeClick}>
                     About me
                   </Button>
                 </HStack>

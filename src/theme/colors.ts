@@ -23,7 +23,7 @@ export const colors = {
   },
   complementary: {
     lightGreen: '#5b941e',
-    darkGreen: '#20941e'
+    darkGreen: '#161509'
   },
   gradientHeading: {}
 };

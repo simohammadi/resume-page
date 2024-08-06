@@ -17,8 +17,13 @@ import { CiLinkedin, CiMail } from 'react-icons/ci';
 import { FaGithub } from 'react-icons/fa';
 import { profileData } from '../data/about-me-data';
 import { ProfilePic } from '../profile-pic';
+import { links } from '../data/links';
 
 const AboutPage = () => {
+  const onButtonClick = (url: string) => {
+    window.open(url);
+  };
+
   return (
     <Box fontSize="xl">
       <Grid minH="100vh" p={3}>
@@ -56,7 +61,9 @@ const AboutPage = () => {
                       }
                       aria-label="Linkedin"
                       as={Link}
-                      href={'https://www.linkedin.com/in/sina-mohammadi-9627b1137/'}
+                      onClick={() => {
+                        onButtonClick(links.linkedin);
+                      }}
                     />
                     <IconButton
                       icon={
@@ -66,7 +73,9 @@ const AboutPage = () => {
                       }
                       aria-label="Github"
                       as={Link}
-                      href="https://github.com/simohammadi"
+                      onClick={() => {
+                        onButtonClick(links.github);
+                      }}
                     />
                     <IconButton
                       icon={
@@ -76,7 +85,9 @@ const AboutPage = () => {
                       }
                       aria-label="Mail"
                       as={Link}
-                      href="mailto:sina.sa.mohammadi@gmail.com"
+                      onClick={() => {
+                        onButtonClick(links.linkedin);
+                      }}
                     />
                   </Stack>
                 </Box>
