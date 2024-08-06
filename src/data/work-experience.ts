@@ -92,7 +92,7 @@ export const workExperience: Array<ExperienceData> = [
       After all of the requirements had been gathered Sina mentored the two engineers that were implementing the system at Novo Nordisk. 
       The POC was successful and launched with four external stakeholders allowing them to get data from Novo Nordisk assisting in their research.`,
     badges: {
-      frameworks: ['Oauth2', 'OIDC', 'OIDC', 'Oauth'],
+      frameworks: ['Oauth2', 'OIDC', 'Oauth'],
       technologies: ['On prem', 'Okta-identity', 'Shell']
     }
   },

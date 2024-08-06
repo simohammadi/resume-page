@@ -12,7 +12,8 @@ import {
   Stack,
   Badge,
   Image,
-  Text
+  Text,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { ExperienceData } from '../data/work-experience';
 
@@ -25,6 +26,8 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
     window.open(experienceData.company.domain);
   };
 
+  const badgeColor = useColorModeValue('yellow', 'black');
+
   return (
     <Box fontSize="xl">
       <Grid p={6}>
@@ -32,7 +35,9 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
           <Card maxW="800px" minW="300px">
             <CardHeader>
               <Flex justifyContent="space-between" alignItems="center">
-                <Heading size={'md'}>{experienceData.company.projectName}</Heading>
+                <Heading size={'md'}>
+                  {experienceData.company.projectName}
+                </Heading>
                 <IconButton
                   icon={
                     <Image
@@ -77,7 +82,10 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
                   </Heading>
                   <Flex flexWrap="wrap" gap={2} pt="2">
                     {experienceData.badges.frameworks.map((badge) => (
-                      <Badge variant="subtle" colorScheme="black" key={badge}>
+                      <Badge
+                        variant="subtle"
+                        colorScheme={badgeColor}
+                        key={`${experienceData.company.projectName}-${badge}`}>
                         {badge}
                       </Badge>
                     ))}
@@ -90,7 +98,9 @@ const WorkExperienceCard = ({ experienceData }: WorkExperienceCardProps) => {
                   </Heading>
                   <Flex flexWrap="wrap" gap={2} pt="2">
                     {experienceData.badges.technologies.map((badge) => (
-                      <Badge variant="subtle" colorScheme="black" key={badge}>
+                      <Badge
+                        colorScheme={badgeColor}
+                        key={`${experienceData.company.projectName}-${badge}`}>
                         {badge}
                       </Badge>
                     ))}

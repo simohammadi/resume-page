@@ -23,13 +23,18 @@ export const Button = defineStyleConfig({
       bgGradient: 'linear(to-r, gradient.start, gradient.end)'
     },
     outline: {
-      color: 'black',
       variant: 'outline',
       _hover: {
         background: 'none',
         backgroundSize: '200%',
         backgroundPosition: '20% center',
         bgGradient: 'linear(to-r, gradient.start, complementary.darkGreen)'
+      },
+      _light: {
+        color: 'black'
+      },
+      _dark: {
+        color: 'white'
       }
     }
   }

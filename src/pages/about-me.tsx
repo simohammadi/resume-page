@@ -16,7 +16,7 @@ import { IconContext } from 'react-icons';
 import { CiLinkedin, CiMail } from 'react-icons/ci';
 import { FaGithub } from 'react-icons/fa';
 import { profileData } from '../data/about-me-data';
-import { ProfilePic } from '../profile-pic';
+import { ProfilePic } from '../components/profile-pic';
 import { links } from '../data/links';
 
 const AboutPage = () => {
