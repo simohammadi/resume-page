@@ -1,8 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { Outlet } from 'react-router-dom';
-import Header from './header';
+import Header from '../header';
+import { ReactElement } from 'react';
 
-export const Layout = () => (
+export const BaseLayout = ({ children }: { children: ReactElement }) => (
   <Flex minH="100vh" flexDirection="column">
     <Header />
     <Flex p={{ base: 2, sm: 4 }} flexDirection="column" flexGrow={1} mt={16}>
@@ -26,10 +26,10 @@ export const Layout = () => (
         />
       </Box>
       <Box zIndex={2} as="main">
-        <Outlet />
+        {children}
       </Box>
     </Flex>
   </Flex>
 );
 
-export default Layout;
+export default BaseLayout;

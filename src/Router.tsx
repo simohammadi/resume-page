@@ -1,8 +1,9 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import AboutPage from './pages/about-me';
 import HomePage from './pages/home';
-import Layout from './components/layout';
+import Layout from './components/layouts/layout';
 import WorkExperiencePage from './pages/work-experience';
+import { ErrorPage } from './pages/error';
 
 export enum Paths {
   root = '/',
@@ -15,16 +16,18 @@ const router = createHashRouter([
   {
     path: Paths.root,
     element: <Layout />,
-    errorElement: <div>Error</div>,
+    errorElement: <ErrorPage />,
     children: [
-      { path: Paths.root, element: <HomePage /> },
+      { path: Paths.root, element: <HomePage />, errorElement: <ErrorPage /> },
       {
         path: Paths.aboutMe,
-        element: <AboutPage />
+        element: <AboutPage />,
+        errorElement: <ErrorPage />
       },
       {
         path: Paths.workExperience,
-        element: <WorkExperiencePage />
+        element: <WorkExperiencePage />,
+        errorElement: <ErrorPage />
       }
     ]
   }
